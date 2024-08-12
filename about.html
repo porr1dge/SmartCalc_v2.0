@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart_Calc_v2</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            min-width: 320px;
+
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .header_container {
+            padding: 15px 0;
+        }
+
+        .header_title {
+            margin: 0;
+            text-align: center;
+            font-size: 48px;
+        }
+
+        .section_title {
+            margin: 0;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .box_title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .actions_content {
+            justify-content: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header_container">
+            <h1 class="header_title">Инструкция по использованию SmartCalc_v2</h1>
+        </div>
+    </header>
+    <section class="usage">
+        <div class="container">
+            <h2 class="section_title">Использование:</h2>
+            <p class="section_descr">
+                Установка приложения SmartCalc_v2 осуществляется при помощи Makefile и CMake файлов из папки src.
+                Ниже приведен перечень необходимых команд.
+            </p>
+            <div class="usage_content content">
+                <div class="usage_box box install">
+                    <h3 class="box_title">Установка:</h3>
+                    <ol>
+                        <li>Команда
+                            <i>make install</i> из папки src.
+                        </li>
+                    </ol>
+                </div>
+                <div class="usage_box box dist">
+                    <h3 class="box_title">Сборка в архив:</h3>
+                    <ol>
+                        <li>Команда <i>make dist</i> из папки src.</li>
+                        <li>Архив собирается в папку <i>src</i>.</li>
+                    </ol>
+                </div>
+
+                <div class="usage_box box uninstall">
+                    <h3 class="box_title">Удаление:</h3>
+                    <ol>
+                        <li>Команда <i>make uninstall</i> из папки src.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="open">
+        <div class="container">
+            <h2 class="sectioin_title">Запуск и использование:</h2>
+            <ol>
+                <li>Для запуска приложения открыть исполняемый файл open build/SmartCalc.app/Contents/MacOS/SmartCalc,
+                    либо командой make open</li>
+                <li>Для вычисления: ввести выражение в поле кнопками и нажать на кнопку -
+                    &quot;<b>=</b>&quot;.</li>
+                <li>Для вычисления выражения с использованием переменной <i>x</i> необходимо ввести в выходную строку
+                    <i><b>x</b></i>
+                    при
+                    помощи соответствующей кнопки, а также ввести в поле числовое значение <i><b>x</b></i>, поле рядом с
+                    этой кнопкой
+                </li>
+                <li>Для построения графика, перевести калькулятор в режим построения графика&nbsp; при помощи
+                    кнопки &quot;<b>
+                        Graphic </b>&quot;, ввести выражение и нажать&nbsp;&nbsp;на кнопку &quot;<b>Enter</b>&quot;. Для
+                    очистки
+                    поля
+                    графика
+                    использовать кнопку &quot;<b>Clear</b>&quot;</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="actions">
+        <div class="container">
+            <h2 class="sectioin_title">Доступные действия:</h2>
+            <p class="section_descr">
+                Вычисление произвольных скобочных арифметических выражений в инфиксной нотации с
+                подстановкой значения
+                переменной <i>x</i> в виде числа.
+            </p>
+            <div class="actions_content content">
+                <div class="actions_box box">
+                    <h3 class="box_title">Арифметические операторы:</h3>
+                    <ol>
+                        <li>Скобки: <i>(a + b)</i></li>
+                        <li>Сложение: <i>a + b</i></li>
+                        <li>Вычитание: <i>a - b</i></li>
+                        <li>Умножение: <i>a * b</i></li>
+                        <li>Деление: <i>a / b</i></li>
+                        <li>Возведение в степень: <i>a ^ b</i></li>
+                        <li>Остаток от деления: <i>a mod b</i></li>
+                        <li>Унарный плюс: <i>(+a)</i></li>
+                        <li>Унарный минус: <i>(-a)</i></li>
+                    </ol>
+                </div>
+
+                <div class="actions_box box">
+                    <h3 class="box_title">Функции:</h3>
+                    <ol>
+                        <li>Косинус: <i>cos(x)</i></li>
+                        <li>Синус: <i>sin(x)</i></li>
+                        <li>Тангенс: <i>tan(x)</i></li>
+                        <li>Арк косинус: <i>acos(x)</i></li>
+                        <li>Арк синус: <i>asin(x)</i></li>
+                        <li>Арк тангенс: <i>atan(x)</i></li>
+                        <li>Квадратный корень: <i>sqrt(x)</i></li>
+                        <li>Натуральный логарифм: <i>ln(x)</i></li>
+                        <li>Десятичный логарифм: <i>log(x)</i></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
